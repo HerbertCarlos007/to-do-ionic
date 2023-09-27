@@ -1,12 +1,21 @@
-<div *ngFor="let task of: tasks">
-  <ion-card class="card">
-    <div class="left-section">
-      <ion-checkbox class="checkbox"></ion-checkbox>
-      <ion-card-title class="task-title">{{task.title}}</ion-card-title>
-    </div>
+<div *ngIf="tasks.length > 0; else listEmpty">
+  <div *ngFor="let task of tasks">
+    <ion-card class="card">
+      <div class="left-section">
+        <ion-checkbox class="checkbox"></ion-checkbox>
+        <ion-card-title class="task-title">{{ task.title }}</ion-card-title>
+      </div>
 
-    <div class="right-section" >
-      <ion-icon name="trash" size="large" (click)="deleteTask(task.id!)"></ion-icon>
-    </div>
-  </ion-card>
+      <div class="right-section">
+        <ion-icon
+          name="trash"
+          size="large"
+          (click)="deleteTask(task.id!)"
+        ></ion-icon>
+      </div>
+    </ion-card>
+  </div>
 </div>
+<ng-template #listEmpty>
+  <h2>Create your first task</h2>
+</ng-template>
