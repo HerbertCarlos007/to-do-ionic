@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ContentChildren, QueryList, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ModalComponent  implements OnInit {
   @Input() isModalOpen!: boolean
   @Input() setCloseModal!: () => void
+  
   constructor() { }
 
   ngOnInit() {}

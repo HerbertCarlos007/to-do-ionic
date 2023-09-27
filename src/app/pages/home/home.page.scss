@@ -42,3 +42,34 @@ ion-icon {
   left: 0;
   width: 100%;
 }
+
+.container-modal {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+
+.container-modal h1 {
+  font-weight: bold;
+}
+
+.container input {
+  border: 1px solid black;
+  border-radius: 8px;
+  height: 40px;
+  padding: 10px;
+}
+
+.container button {
+  margin-top: 15px;
+  height: 35px;
+  font-size: 20px;
+  border: 1px solid #446ae7;
+  border-radius: 8px;
+  background-color: #446ae7;
+  color: #FFF;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

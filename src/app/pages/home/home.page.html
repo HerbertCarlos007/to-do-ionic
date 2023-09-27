@@ -18,7 +18,7 @@
         <ion-icon name="trash" size="large"></ion-icon>
       </div>
     </ion-card>
-    
+
     <ion-card class="card">
       <div class="left-section">
         <ion-checkbox class="checkbox"></ion-checkbox>
@@ -31,11 +31,17 @@
     </ion-card>
   </div>
 
-  <ion-fab vertical="bottom" horizontal="end" >
+  <ion-fab vertical="bottom" horizontal="end">
     <ion-fab-button (click)="setOpenModal()">
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  
-  <app-modal [isModalOpen]="isModalOpen" [setCloseModal]="setCloseModal"></app-modal>
+
+  <app-modal [isModalOpen]="isModalOpen" [setCloseModal]="setCloseModal">
+    <div class="container-modal">
+      <h1>Adicione sua tarefa</h1>
+      <input type="text" placeholder="Digite sua tarefa" />
+      <button>Adicionar</button>
+    </div>
+  </app-modal>
 </div>
