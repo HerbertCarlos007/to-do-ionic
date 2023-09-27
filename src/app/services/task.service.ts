@@ -6,6 +6,7 @@ import { Task } from '../interfaces/Task';
 })
 export class TaskService {
   private tasks: Task[] = []
+  private idCounter: number = 1
   
   constructor() { }
   
@@ -14,6 +15,11 @@ export class TaskService {
   }
   
   addTask(task: Task): void {
+    task.id = this.idCounter++
     this.tasks.push(task)
+  }
+  
+  deleteTask(id: number): void {
+    this.tasks = this.tasks.filter(task => task.id !== id)
   }
 }

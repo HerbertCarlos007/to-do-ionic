@@ -5,8 +5,8 @@
       <ion-card-title class="task-title">{{task.title}}</ion-card-title>
     </div>
 
-    <div class="right-section">
-      <ion-icon name="trash" size="large"></ion-icon>
+    <div class="right-section" >
+      <ion-icon name="trash" size="large" (click)="deleteTask(task.id!)"></ion-icon>
     </div>
   </ion-card>
 </div>

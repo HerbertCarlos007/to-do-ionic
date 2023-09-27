@@ -23,6 +23,7 @@ export class HomePage {
   
   createTask() {
     const task: Task = {
+      id: 1,
       title: this.titleValueInput
     }
     

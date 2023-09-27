@@ -12,9 +12,19 @@ export class TaskListComponent  implements OnInit {
   constructor(private taskService: TaskService) { }
 
   ngOnInit() {
+    this.getTasks()
+  }
+  
+  getTasks() {
     this.tasks = this.taskService.getTasks()
   }
-
+  
+  deleteTask(id: number) {
+    this.taskService.deleteTask(id)
+    this.getTasks()
+  }
+  
+  
 }
 
 
