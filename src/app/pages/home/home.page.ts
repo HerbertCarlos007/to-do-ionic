@@ -1,4 +1,6 @@
 import { Component} from '@angular/core';
+import { Task } from 'src/app/interfaces/Task';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +9,9 @@ import { Component} from '@angular/core';
 })
 export class HomePage {
   isModalOpen: boolean = false
-  constructor() {}
+  titleValueInput: string = ''
+  
+  constructor(private taskService: TaskService) {}
   
   setOpenModal() {
     this.isModalOpen = !this.isModalOpen
@@ -16,4 +20,15 @@ export class HomePage {
   setCloseModal(): void {
     this.isModalOpen = !this.isModalOpen
   }
+  
+  createTask() {
+    const task: Task = {
+      title: this.titleValueInput
+    }
+    
+    this.taskService.addTask(task)
+    this.titleValueInput = ''
+    this.setCloseModal()
+  }
+  
 }

@@ -8,27 +8,9 @@
   <div class="content">
     <h1>Today's tasks</h1>
 
-    <ion-card class="card">
-      <div class="left-section">
-        <ion-checkbox class="checkbox"></ion-checkbox>
-        <ion-card-title class="task-title">Estudar</ion-card-title>
-      </div>
-
-      <div class="right-section">
-        <ion-icon name="trash" size="large"></ion-icon>
-      </div>
-    </ion-card>
-
-    <ion-card class="card">
-      <div class="left-section">
-        <ion-checkbox class="checkbox"></ion-checkbox>
-        <ion-card-title class="task-title">Estudar</ion-card-title>
-      </div>
-
-      <div class="right-section">
-        <ion-icon name="trash" size="large"></ion-icon>
-      </div>
-    </ion-card>
+    <div>
+      <app-task-list></app-task-list>
+    </div>
   </div>
 
   <ion-fab vertical="bottom" horizontal="end">
@@ -40,8 +22,12 @@
   <app-modal [isModalOpen]="isModalOpen" [setCloseModal]="setCloseModal">
     <div class="container-modal">
       <h1>Adicione sua tarefa</h1>
-      <input type="text" placeholder="Digite sua tarefa" />
-      <button>Adicionar</button>
+      <input 
+      type="text" 
+      placeholder="Digite sua tarefa" 
+      [(ngModel)]="titleValueInput"
+      />
+      <button (click)="createTask()">Adicionar</button>
     </div>
   </app-modal>
 </div>
